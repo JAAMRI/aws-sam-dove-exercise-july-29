@@ -13,10 +13,10 @@ Resources:
   dmpmiddlewareDoveDryShampoosJul2019Function:
     Type: AWS::Serverless::Function
     Properties:
-      CodeUri: s3://serverlesstutorial1/3b432830d660954558babf7f2e819c25
+      CodeUri: s3://serverlesstutorial1/acf14e72433d81470c0d984c289431c7
       FunctionName:
         Fn::Sub: dmpmiddleware-dove-dry-shampoos-${ENV}
-      Handler: main.lambda_handler
+      Handler: dmpmiddleware-dove-dry-shampoos.main.lambda_handler
       Events:
         dmpmiddlewareVersion:
           Type: Api
@@ -27,4 +27,4 @@ Outputs:
   dmpmiddlewareDoveDryShampoosApi:
     Description: API Gateway endpoint URL for dmpmiddlewareDoveDryShampoosFunction
     Value:
-      Fn::Sub: https://${ServerlessRestApi}.execute-api.${AWS::Region}.amazonaws.com/${ENV}/dove-dry-shampoos/
+      Fn::Sub: https://${ServerlessRestApi}.execute-api.${AWS::Region}.amazonaws.com/${ENV}/dovedryshampoos/

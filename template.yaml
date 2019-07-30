@@ -19,7 +19,7 @@ Resources:
       CodeUri: '.'
       FunctionName:
         Fn::Sub: dmpmiddleware-dove-dry-shampoos-${ENV}
-      Handler: main.lambda_handler
+      Handler: dmpmiddleware-dove-dry-shampoos.main.lambda_handler
       Events:
         dmpmiddlewareVersion:
           Type: Api # More info about API Event Source: https://github.com/awslabs/serverless-application-model/blob/master/versions/2016-10-31.md#api
@@ -31,7 +31,7 @@ Outputs:
   dmpmiddlewareDoveDryShampoosApi:
     Description: 'API Gateway endpoint URL for dmpmiddlewareDoveDryShampoosFunction'
     Value: 
-      Fn::Sub: https://${ServerlessRestApi}.execute-api.${AWS::Region}.amazonaws.com/${ENV}/dove-dry-shampoos/
+      Fn::Sub: https://${ServerlessRestApi}.execute-api.${AWS::Region}.amazonaws.com/${ENV}/dovedryshampoos/
 
     # dmpmiddlewareDoveDryShampoosFunction:
     #   Description: "dmpmiddleware-dove-dry-shampoos Lambda Function ARN"
