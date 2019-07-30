@@ -1,0 +1,30 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Transform: AWS::Serverless-2016-10-31
+Description: dmpmiddleware-dove-dry-shampoos
+Globals:
+  Function:
+    Timeout: 60
+    Runtime: python3.7
+Parameters:
+  ENV:
+    Description: Required. The ENVIRONMENT
+    Type: String
+Resources:
+  dmpmiddlewareDoveDryShampoosJul2019Function:
+    Type: AWS::Serverless::Function
+    Properties:
+      CodeUri: s3://serverlesstutorial1/de1ce1e40ba9f6fd4045215774ed9dbe
+      FunctionName:
+        Fn::Sub: dmpmiddleware-dove-dry-shampoos-${ENV}
+      Handler: main.lambda_handler
+      Events:
+        dmpmiddlewareVersion:
+          Type: Api
+          Properties:
+            Path: /dovedryshampoos
+            Method: post
+Outputs:
+  dmpmiddlewareDoveDryShampoosApi:
+    Description: API Gateway endpoint URL for dmpmiddlewareDoveDryShampoosFunction
+    Value:
+      Fn::Sub: https://${ServerlessRestApi}.execute-api.${AWS::Region}.amazonaws.com/${ENV}/dove-dry-shampoos/
