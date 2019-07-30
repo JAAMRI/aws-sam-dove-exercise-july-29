@@ -208,3 +208,10 @@ aws cloudformation describe-stacks \
 sam logs -n HelloWorldFunction --stack-name dmpmiddleware-dove-dry-shampoos --tail
 ```
 
+______________
+sam package --output-template-file packaged.yaml --s3-bucket BUCKETNAME
+
+sam deploy --template-file packaged.yaml --stack-name dmpmiddleware-dove-dry-shampoos-Prod --capabilities CAPABILITY_NAMED_IAM --region ca-central-1 --profile awsTestUserName --parameter ENV=Prod
+
+aws cloudformation describe-stacks --stack-name dmpmiddleware-dove-dry-shampoos-Prod
+
