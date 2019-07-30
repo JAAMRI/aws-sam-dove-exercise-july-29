@@ -13,7 +13,7 @@ Resources:
   dmpmiddlewareDoveDryShampoosJul2019Function:
     Type: AWS::Serverless::Function
     Properties:
-      CodeUri: s3://serverlesstutorial1/de1ce1e40ba9f6fd4045215774ed9dbe
+      CodeUri: s3://serverlesstutorial1/3b432830d660954558babf7f2e819c25
       FunctionName:
         Fn::Sub: dmpmiddleware-dove-dry-shampoos-${ENV}
       Handler: main.lambda_handler
